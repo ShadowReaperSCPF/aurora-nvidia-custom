@@ -18,12 +18,13 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
     repos:
       - 
     install:
       - konsole
       - 
-    uninstall:
+    remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
